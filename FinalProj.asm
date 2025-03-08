@@ -115,7 +115,10 @@ includelib \masm32\lib\kernel32.lib
     ttotalrow2 db 9,9,9,9,9,"      |  Total Units:   |  23 |  1  |  24   |",10, 0
 
 .data
-    chooseYear db 10,"Choose a year level (1 = 1st year, 2 = 2nd year, 3 = 3rd year, 4 = 4th year): ", 0
+    StudName db 10,"Name: ", 0
+    StudYear db 10,"Year Level: ", 0
+
+    chooseYear db 10,"Choose a year level (1 = 1st year, 2 = 2nd year, 3 = 3rd year, 4 = 4th year, 5 = Display all, 6 = Back): ", 0
     yearChoice dd ?
     buffer db 20 dup(0)
 .code
@@ -230,6 +233,9 @@ first_year:
     jmp third_prompt
 
 second_year:
+    invoke StdOut, addr lineBreak1
+    invoke StdOut, addr lineBreak1b
+    invoke StdOut, addr close1
     invoke StdOut, addr yearLevel2
     invoke StdOut, addr close2
     invoke StdOut, addr lineBreak1
@@ -280,7 +286,6 @@ second_year:
     invoke StdOut, addr unitLb2
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr close1
     invoke StdOut, addr ssummerunit
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
@@ -296,9 +301,6 @@ second_year:
     invoke StdOut, addr sstotalrow
     invoke StdOut, addr linefeed
     invoke StdOut, addr unitLb
-    invoke StdOut, addr lineBreak1
-    invoke StdOut, addr lineBreak1b
-    invoke StdOut, addr close1
     jmp third_prompt
 
 third_year:
@@ -370,6 +372,7 @@ fourth_year:
     invoke StdOut, addr lineBreak3b
     invoke StdOut, addr tableTitle
     invoke StdOut, addr tableTitle2
+    invoke StdOut, addr lineBreak2
     invoke StdOut, addr lineBreak2
     invoke StdOut, addr row1
     invoke StdOut, addr lineBreak2
