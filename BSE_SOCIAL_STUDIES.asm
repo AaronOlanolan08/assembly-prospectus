@@ -114,17 +114,50 @@ includelib \masm32\lib\kernel32.lib
     ttotalrow db 10,9,9,9,"     |  Total Units:   |  24 |  0  |  24   |", 0
     ttotalrow2 db 9,9,9,9,9,"      |  Total Units:   |  23 |  1  |  24   |",10, 0
 
+    empty_table_close2 db 9,9,9,9,9,9,9,9,9,"       |", 0
 .data
     chooseYear db 10,"Choose a year level (1 = 1st year, 2 = 2nd year, 3 = 3rd year, 4 = 4th year): ", 0
+    pickSem db 10, "Enter semester (1 = 1st sem, 2 = 2nd sem, 3 = summer): ", 0
+    enterCode db 10, "Enter subject code to add: ", 0
     yearChoice dd ?
+    semChoice dd ?
+    subjChoice dd ?
     buffer db 20 dup(0)
 .code
 
 start:
     invoke ClearScreen
-    je third_prompt
+    jmp second_prompt
 
-third_prompt:
+second_prompt:
+    invoke StdOut, addr chooseYear
+    invoke StdIn, addr buffer, sizeof buffer
+    invoke atodw, addr buffer
+    mov yearChoice, eax
+
+    cmp yearChoice, 1
+    je third_prompt1
+    cmp yearChoice, 2
+    je second_year
+    cmp yearChoice, 3
+    je third_year
+    cmp yearChoice, 4
+    je fourth_year
+
+third_prompt1:
+    invoke StdOut, addr pickSem
+    invoke StdIn, addr buffer, sizeof buffer
+    invoke atodw, addr buffer
+    mov semChoice, eax
+
+    cmp semChoice, 1
+    je first_year_sem1
+    cmp semChoice, 2
+    je first_year_sem2
+    cmp semChoice, 3
+    je first_year_summer
+
+third_prompt_display:
     invoke StdOut, addr chooseYear
     invoke StdIn, addr buffer, sizeof buffer
     invoke atodw, addr buffer
@@ -156,6 +189,14 @@ header:
     invoke StdOut, addr major
     invoke StdOut, addr major1
     invoke StdOut, addr close3
+    
+enter_code:
+    invoke StdOut, addr enterCode
+    invoke StdIn, addr buffer, sizeof buffer
+    invoke atodw, addr buffer
+    mov subjChoice, eax
+
+
 
 first_year:
     invoke StdOut, addr lineBreak1
@@ -227,7 +268,79 @@ first_year:
     invoke StdOut, addr linefeed
     invoke StdOut, addr unitLb
     invoke StdOut, addr linefeed
-    jmp third_prompt
+    jmp third_prompt_display
+
+first_year_sem1:
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr semUnit
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr tableTitle
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow1
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow3
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow4
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow5
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow6
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow7
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow8
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr ftotalrow
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr unitLb
+    jmp enter_code
+
+first_year_sem2:
+    invoke StdOut, addr tableTitle2
+    invoke StdOut, addr sem2Unit
+    invoke StdOut, addr frow1b
+    invoke StdOut, addr frow2b
+    invoke StdOut, addr frow3b
+    invoke StdOut, addr frow4b
+    invoke StdOut, addr frow5b
+    invoke StdOut, addr frow6b
+    invoke StdOut, addr frow7b
+    invoke StdOut, addr frow8b
+    invoke StdOut, addr ftotalrowb
+
+first_year_summer:
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr summerunit
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr fsummer1
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr fsummer2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr fsummer3
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr fstotalrow
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr unitLb
+    invoke StdOut, addr linefeed
+    jmp third_prompt_display
 
 second_year:
     invoke StdOut, addr lineBreak1
@@ -299,7 +412,7 @@ second_year:
     invoke StdOut, addr linefeed
     invoke StdOut, addr unitLb
     invoke StdOut, addr linefeed
-    jmp third_prompt
+    jmp third_prompt_display
 
 third_year:
     invoke StdOut, addr lineBreak1
@@ -354,7 +467,7 @@ third_year:
     invoke StdOut, addr unitLb
     invoke StdOut, addr unitLb2
     invoke StdOut, addr linefeed
-    jmp third_prompt
+    jmp third_prompt_display
 
 fourth_year:
     invoke StdOut, addr lineBreak1
@@ -388,7 +501,7 @@ fourth_year:
     invoke StdOut, addr totalRow2
     invoke StdOut, addr unitLb
     invoke StdOut, addr unitLb2
-    jmp third_prompt
+    jmp third_prompt_display
 
     ; Exit program
     invoke ExitProcess, 0
