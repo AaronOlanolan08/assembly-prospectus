@@ -114,7 +114,74 @@ includelib \masm32\lib\kernel32.lib
     ttotalrow db 10,9,9,9,"     |  Total Units:   |  24 |  0  |  24   |", 0
     ttotalrow2 db 9,9,9,9,9,"      |  Total Units:   |  23 |  1  |  24   |",10, 0
 
-    empty_table_close2 db 9,9,9,9,9,9,9,9,9,"       |", 0
+.data
+    frow1a db 10," |1. GE 2     |   Purposive Communication w/ IL |  6  |  0  |  6    |  none    |", 0
+    frow2a db 10," |2. GE 4     |   Mathematics in the Modern W.. |  3  |  0  |  3    |  none    |", 0
+    frow3a db 10," |3. GE 1     |   Understanding the self        |  3  |  0  |  3    |  none    |", 0
+    frow4a db 10," |4. EDUC 101 |   The Child and Adolescent Le.. |  3  |  0  |  3    |  none    |", 0
+    frow5a db 10," |5. SST 111  |   Foundation of Social Studies  |  3  |  0  |  3    |  none    |", 0
+    frow6a db 10," |6. SST 112  |   Geography 1                   |  3  |  0  |  3    |  none    |", 0
+    frow7a db 10," |7. PAHF     |   Movement Competency Training  |  2  |  0  |  2    |  none    |", 0
+    frow8a db 10," |8. NSTP 1   |   National Service Training P.. |  3  |  0  |  3    |  none    |", 0
+
+    frow1bb db 10," |1. UGE 1    |   Reading Comprehension         |  6  |  0  |  6    |  GE 2    |",10, 0
+    frow2bb db 10," |2. GE 3     |   The Contemporary World        |  3  |  0  |  3    |  none    |",10, 0
+    frow3bb db 10," |3. EDUC 102 |   Technology for Teaching and.. |  3  |  0  |  3    |  none    |",10, 0
+    frow4bb db 10," |4. EDUC 103 |   Facilitating Learner-Center.. |  3  |  0  |  3    |  EDUC 101|",10, 0
+    frow5bb db 10," |5. SST 121  |   Geography 2                   |  3  |  0  |  3    |  SST 112 |",10, 0
+    frow6bb db 10," |6. SST 122  |   Asian Studies                 |  3  |  0  |  3    |  SST 111 |",10, 0
+    frow7bb db 10," |7. PAHF 2   |   Exercise-based Fitness Acti.. |  2  |  0  |  2    |  PAHF 1  |",10, 0
+    frow8bb db 10," |8. NSTP 2   |   National Service Training A.. |  3  |  0  |  3    |  NSTP 1  |",10, 0
+
+    fsummer1a db 10," |1. GE 5     |   Science, Technology and Soc.. |  3  |  0  |  3    |  none    |", 0
+    fsummer2a db 10," |2. SST 214  |   Wordl History 1               |  3  |  0  |  3    |  SST 111 |", 0
+    fsummer3a db 10," |3. LP 100   |   Strategic Less..              |  3  |  0  |  3    |  none    |", 0
+    fstotalrowa db 10,9,9,9,"     |  Total Units:   |  9 |  0  |  9     |", 0
+
+.data
+    srow1a db 10," |1. GE 6     |   Rizal's Life and Works        |  3  |  0  |  3    | none     |", 0
+    srow2a db 10," |2. EDUC 104 |   Foundation of Special..       |  3  |  0  |  3    | none     |", 0
+    srow3a db 10," |3. EDUC 105 |   Assessment of Learning 1      |  3  |  0  |  3    | EDUC 103 |", 0
+    srow4a db 10," |4. SST 211  |   Geography 3                   |  3  |  0  |  3    | SST 121  |", 0
+    srow5a db 10," |5. SST 212  |   Microeconomics                |  3  |  0  |  3    | SST 111  |", 0
+    srow6a db 10," |6. SST 213  |   Law and Related Studies       |  3  |  0  |  3    | none     |", 0
+    srow7a db 10," |7. GE 11    |   The Entrepreneurial Mind      |  3  |  0  |  3    | none     |", 0
+    srow8a db 10," |8. FIL 215  |   Malayuning Komunikasyon..     |  3  |  0  |  3    | none     |", 0
+    srow9a db 10," |9. PAHF 3   |   Dance and Sports 1            |  2  |  0  |  2    | PAHF 2   |", 0
+
+    srow1bb db 10," |1. EDUC 106|   The Teacher and the..          |  3  |  0  |  3    |  none    |",10, 0
+    srow2bb db 10," |2. EDUC 107|   Assessment of Learning 2       |  3  |  0  |  3    |  EDUC 105|",10, 0
+    srow3bb db 10," |3. EDUC 108|   Building and Enhancing..       |  3  |  0  |  3    |  none    |",10, 0
+    srow4bb db 10," |4. EDUC 109|   The Teaching Profession        |  3  |  0  |  3    |  none    |",10, 0
+    srow5bb db 10," |5. SST 221 |   Place and Landscapes..         |  3  |  0  |  3    |  SST 211 |",10, 0
+    srow6bb db 10," |6. SST 222 |   Microeconomics                 |  3  |  0  |  3    |  SST 212 |",10, 0
+    srow7bb db 10," |7. SST 223 |   World History 2                |  3  |  0  |  3    |  SST 214 |",10, 0
+    srow8bb db 10," |8. GE 7    |   Art Appreciation               |  3  |  0  |  3    |  none    |",10, 0
+    srow9bb db 10," |9. PAHF 4  |   Dance and Sports 2             |  2  |  0  |  2    |  PAHF 3  |",10, 0
+
+    ssummer1a db 10," |1. GE 15     |   Environmental Science       |  3  |  0  |  3    |  none     |", 0
+    ssummer2a db 10," |2. GE 8      |   Reading in....              |  3  |  0  |  3    |  SST 111  |", 0
+    ssummer3a db 10," |3. GE 20     |   Reading Visual..            |  3  |  0  |  3    |  none     |", 0
+    sstotalrowa db 10,9,9,9,"     |  Total Units:   |  9 |  0  |  9     |", 0
+
+.data
+    trow1a db 10," |1. GE2      |  Ethics (Disciplinal)           |  3  |  0  |  3    |  none    |", 0
+    trow2a db 10," |2. EDUC 110 |  Teacher and Community, Sch..   |  3  |  0  |  3    |  none    |", 0
+    trow3a db 10," |3. SST 412  |  Research in Social Studies     |  3  |  0  |  3    | EDUC 107 |", 0
+    trow4a db 10," |4. SS7 311  |  Socio-Cultural Anthropology    |  3  |  0  |  3    |  none    |", 0
+    trow5a db 10," |5. SST 312  |  Trends and Issues in Socia..   |  3  |  0  |  3    |  none    |", 0
+    trow6a db 10," |6. SS7 313  |  Teaching Approaches in Se..    |  3  |  0  |  3    | EDUC 103 |", 0
+    trow7a db 10," |7. SS7 314  |  Comparative Economic Planni..  |  3  |  0  |  3    | SST 222  |", 0
+    trow8a db 10," |8. SS7 315  |  Basic of School Managem..      |  3  |  0  |  3    |  none    |", 0
+
+    trow1bb db 10," |1. SST 321  |   Comparative Government an.    |  3  |  0  |  3    |  SST 222 |",10, 0   
+    trow2bb db 10," |2. SST 322  |   Production of Social Stud..   |  3  |  0  |  3    |  SST 313 |",10, 0
+    trow3bb db 10," |3. SST 323  |   Assessment and Evaluatio..    |  3  |  0  |  3    |  SST 222 |",10, 0
+    trow4bb db 10," |4. SST 324/L|   Technology for Teaching..     |  2  |  1  |  3    |  EDUC 102|",10, 0
+    trow5bb db 10," |5. SST 325  |   Social Networking for Soc..   |  3  |  0  |  3    |  SST 311 |",10, 0
+    trow6bb db 10," |6. SST 326  |   Integrative Methods in T..    |  3  |  0  |  3    |  SST 313 |",10, 0
+    trow7bb db 10," |7. SST 413  |   Research in Social Studie..   |  3  |  0  |  3    |  SST 412 |",10, 0
+    trow8bb db 10," |8. CAED 500c|   Career and Personality..      |  3  |  0  |  3    |  3rd yr  |",10, 0
 .data
     chooseYear db 10,"Choose a year level (1 = 1st year, 2 = 2nd year, 3 = 3rd year, 4 = 4th year): ", 0
     pickSem db 10, "Enter semester (1 = 1st sem, 2 = 2nd sem, 3 = summer): ", 0
@@ -138,11 +205,11 @@ second_prompt:
     cmp yearChoice, 1
     je third_prompt1
     cmp yearChoice, 2
-    je second_year
+    je third_prompt2
     cmp yearChoice, 3
-    je third_year
+    je third_prompt3
     cmp yearChoice, 4
-    je fourth_year
+    je third_prompt4
 
 third_prompt1:
     invoke StdOut, addr pickSem
@@ -156,6 +223,41 @@ third_prompt1:
     je first_year_sem2
     cmp semChoice, 3
     je first_year_summer
+
+third_prompt2:
+    invoke StdOut, addr pickSem
+    invoke StdIn, addr buffer, sizeof buffer
+    invoke atodw, addr buffer
+    mov semChoice, eax
+
+    cmp semChoice, 1
+    je second_year_sem1
+    cmp semChoice, 2
+    je second_year_sem2
+    cmp semChoice, 3
+    je second_year_summer
+
+third_prompt3:
+    invoke StdOut, addr pickSem
+    invoke StdIn, addr buffer, sizeof buffer
+    invoke atodw, addr buffer
+    mov semChoice, eax
+
+    cmp semChoice, 1
+    je third_year_sem1
+    cmp semChoice, 2
+    je third_year_sem2
+
+third_prompt4:
+    invoke StdOut, addr pickSem
+    invoke StdIn, addr buffer, sizeof buffer
+    invoke atodw, addr buffer
+    mov semChoice, eax
+
+    ; cmp semChoice, 1
+    ; je fourth_year_sem1
+    ; cmp semChoice, 2
+    ; je fourth_year_sem2
 
 third_prompt_display:
     invoke StdOut, addr chooseYear
@@ -195,8 +297,6 @@ enter_code:
     invoke StdIn, addr buffer, sizeof buffer
     invoke atodw, addr buffer
     mov subjChoice, eax
-
-
 
 first_year:
     invoke StdOut, addr lineBreak1
@@ -280,28 +380,28 @@ first_year_sem1:
     invoke StdOut, addr tableTitle
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow1
+    invoke StdOut, addr frow1a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow2
+    invoke StdOut, addr frow2a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow3
+    invoke StdOut, addr frow3a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow4
+    invoke StdOut, addr frow4a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow5
+    invoke StdOut, addr frow5a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow6
+    invoke StdOut, addr frow6a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow7
+    invoke StdOut, addr frow7a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr frow8
+    invoke StdOut, addr frow8a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
     invoke StdOut, addr ftotalrow
@@ -310,37 +410,53 @@ first_year_sem1:
     jmp enter_code
 
 first_year_sem2:
-    invoke StdOut, addr tableTitle2
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
     invoke StdOut, addr sem2Unit
-    invoke StdOut, addr frow1b
-    invoke StdOut, addr frow2b
-    invoke StdOut, addr frow3b
-    invoke StdOut, addr frow4b
-    invoke StdOut, addr frow5b
-    invoke StdOut, addr frow6b
-    invoke StdOut, addr frow7b
-    invoke StdOut, addr frow8b
-    invoke StdOut, addr ftotalrowb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr tableTitle2
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow1bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow2bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow3bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow4bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow5bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow6bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow7bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr frow8bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr ftotalrow
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr unitLb
+    jmp enter_code
 
 first_year_summer:
     invoke StdOut, addr lineBreak2
     invoke StdOut, addr summerunit
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr fsummer1
+    invoke StdOut, addr fsummer1a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr fsummer2
+    invoke StdOut, addr fsummer2a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr fsummer3
+    invoke StdOut, addr fsummer3a
     invoke StdOut, addr linefeed
     invoke StdOut, addr lineBreak2
-    invoke StdOut, addr fstotalrow
+    invoke StdOut, addr fstotalrowa
     invoke StdOut, addr linefeed
     invoke StdOut, addr unitLb
     invoke StdOut, addr linefeed
-    jmp third_prompt_display
+    jmp enter_code
 
 second_year:
     invoke StdOut, addr lineBreak1
@@ -414,6 +530,99 @@ second_year:
     invoke StdOut, addr linefeed
     jmp third_prompt_display
 
+second_year_sem1:
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr semUnit
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr tableTitle
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow1a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow2a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow3a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow4a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow5a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow6a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow7a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow8a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow9a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr stotalrow
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr unitLb
+    jmp enter_code
+
+second_year_sem2:
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr sem2Unit
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr tableTitle2
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow1bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow2bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow3bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow4bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow5bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow6bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow7bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow8bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr srow9bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr stotalrow
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr unitLb
+    jmp enter_code
+
+second_year_summer:
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr summerunit
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr ssummer1a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr ssummer2a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr ssummer3a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr sstotalrowa
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr unitLb
+    invoke StdOut, addr linefeed
+    jmp enter_code
+
 third_year:
     invoke StdOut, addr lineBreak1
     invoke StdOut, addr lineBreak1b
@@ -468,6 +677,73 @@ third_year:
     invoke StdOut, addr unitLb2
     invoke StdOut, addr linefeed
     jmp third_prompt_display
+
+third_year_sem1:
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr semUnit
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr tableTitle
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow1a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow2a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow3a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow4a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow5a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow6a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow7a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow8a
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr ttotalrow
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr unitLb
+    jmp enter_code
+
+third_year_sem2:
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr sem2Unit
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr linefeed
+    invoke StdOut, addr tableTitle2
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow1bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow2bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow3bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow4bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow5bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow6bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow7bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr trow8bb
+    invoke StdOut, addr lineBreak2
+    invoke StdOut, addr ttotalrow2
+    invoke StdOut, addr unitLb
+    jmp enter_code
 
 fourth_year:
     invoke StdOut, addr lineBreak1
